@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "860db522-e0fb-435a-9707-ed6fb0c5badb",
+		"name": "PruebaMerqueo",
+		"description": "Colección en Postman, donde use mínimo 3 verbos de los servicios API-REST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Peticion1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "74536535-f192-4878-a6fd-39fb5d510b59",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}/posts",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Peticion2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b4a49c73-a09b-451f-aae3-1bff81e74e1f",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}/posts",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Peticion3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1fb07a85-f86b-48c1-8227-bfcccabd4cc2",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}/posts/{{USER}}",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"posts",
+						"{{USER}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "d5be3188-b97c-433f-a6ca-341f1589b3bf",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "4f92c4a0-efc0-4025-99c2-0d5b6d710c9f",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "869bad77-8b66-4a96-b055-2c21a01b2284",
+			"key": "URL",
+			"value": "https://jsonplaceholder.typicode.com/",
+			"type": "string",
+			"description": ""
+		}
+	]
+}
